@@ -1,0 +1,10 @@
+/* Import Tailwind CSS base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card-container {
+    @apply overflow-hidden rounded-xl border border-gray-400 bg-white shadow-md;
+  }
+}
