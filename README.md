@@ -58,7 +58,7 @@ These sections are displayed on elegant card components with a consistent look a
 
 ### Next.js, React, TypeScript
 
-- The primary framework used for the application is Next.js, React, and TypeScript. Next.js was chosen for having multiple useful out-of-thebox features to help accelerate prototyping and development without spending unnecessary time on environment setup. It's ability to easily scaffold and host API routes was particularly useful for this project. TypeScript was the natural choice for
+- The primary framework and tooling used for the application are Next.js, React, and TypeScript. Next.js was chosen for having multiple useful out-of-the-box features to help accelerate prototyping and development without spending unnecessary time on environment setup. It's ability to easily scaffold and host API routes was particularly useful for this project. TypeScript was the natural choice for this project not only because it was part of the provided requirements, but because all modern React applications should be written in TypeScript going forward.
 
 ### Tailwind CSS
 
@@ -66,7 +66,7 @@ These sections are displayed on elegant card components with a consistent look a
 
 ### Recharts
 
-- Reacharts was chosen because it provides a simple and intuitive API for creating charts and graphs. I selected an `Area` chart for visualizing the load average time series data because it is impactful for showing CPU load information.
+- Reacharts was chosen because it provides a simple and intuitive API for creating charts and graphs. I selected an `Area` chart for visualizing the time series data points because it is impactful for showing CPU load information. The light red color region displayed below the line helps highlight the importance of CPU load in the context of the application.
 
 ## Testing
 
@@ -74,15 +74,16 @@ The testing frameworks used for this project are Jest and React Testing Library.
 
 **Running the Tests**
 
-- To run the tests, navigate to the project root directory and run `npm run test`. The tests will also be executed automatically when running the build command.
+- To run the tests, navigate to the project root directory and run `npm run test`.
+  - The tests will also be executed automatically when running the build command.
 - The tests will be executed and the results will be displayed in the terminal.
 - There are currently 9 tests in the suite, all of which are passing as of the time of writing.
 
-Beyond the code tests, I also performed a breadth of manual QA testing to ensure that the application functions as expected. This included modifying the `STATUS_TIME_WINDOW` and `REFETCH_INTERVAL` constants found in `src/app/CONSTANTS.ts` to test different scenarios and edge cases. As was recommended in the instructions I utilized multiple `yes > /dev/null` commands to create periods of high average CPU load, and then used `killall -HUP yes` to simulate the system returning to normal.
+Beyond the code tests, I also performed a breadth of manual QA testing to ensure that the application functions as expected. This included modifying the `STATUS_TIME_WINDOW` and `REFETCH_INTERVAL` constants found in `src/app/CONSTANTS.ts` to test different scenarios and edge cases. As was recommended in the instructions I utilized multiple `yes > /dev/null` commands to create periods of high average CPU load, and then used `killall -HUP yes` to simulate the system returning to normal. Reducing the aforementioned constants will allow you to test the status event logic much more quickly.
 
 ## Documentation
 
-I utilized TypeDoc to generate a simple docsite for the application based on JSDoc-style comments included throughout the codebase. The docuemtnation is comprehensive for a prototype-level application and serves as a solid foundation point for future development. In addition to documenting the types and functions, I've also included a number of inline comments to explain certain pieces of functionality.
+I utilized TypeDoc to generate a documentation page for the application based on JSDoc-style comments included throughout the codebase. The docuemtnation is comprehensive for a prototype-level application and serves as a solid foundation for future development. In addition to documenting the type definitions and functional components, I've also included a number of inline comments to explain certain pieces of functionality.
 
 **Running the Documentation**
 
@@ -93,19 +94,19 @@ I utilized TypeDoc to generate a simple docsite for the application based on JSD
 ## Potential Future Enhancements
 
 **Additional System Monitoring Modules**
-Currently, this application focuses on monitoring a single system metric: CPU load average. However, there are many other system metrics that could be added to the user experience, such as memory allocation, disk usage, network traffic, and more. Expanding the functionality would give it a true dashboard-style experience.
+Currently, this application focuses on monitoring a single system metric: CPU load average. However, there are many other system metrics that could be added to the user experience, such as memory allocation, disk usage, network traffic, and more. Expanding the functionality would enable a true dashboard-style experience.
 
 **Desktop Framework Integration**
 This prototype is currently browser-based per the requirements. In the future, we should consider integrating it with a desktop framework such as Electron to provide a more native user experience. This would also allow more advanced and comprehensive system monitoring capabilities.
 
-**CI/CD Pipeline**
-The current mode of development, testing, and build is manual and insufficient for a production-level application. Introducing DevOps practices would enable the introduction automated testing, build, and deployment processes. It may also be possible to integrate the build process with various desktop application stores for easy distribution to end uers.
+**CI/CD Pipelines**
+The current mode of testing, documentation generation, and build are manual and insufficient for a production-level application. These would all need cloud-based automation to push them to the next level. Introducing DevOps practices will make for a more reliable and higher-quality product. It should also be possible to integrate the deployment process with various desktop application stores for easy distribution to end uers.
 
 **Component and Design Library**
-The current component library is relatively limited and focused on the prototype requirements. In the future, I would expand this into a more robust component library and associated design system. Introducing a tool like Storybook would allow for a smoother development experience for prototyping, testing, and documentation.
+The current component library is relatively utilitarian and focused on the prototype requirements. In the future, I would expand this into a more robust component library and associated design system. Introducing a tool like Storybook would allow for a smoother development experience for prototyping, testing, and documentation.
 
 **Visual Design Improvements**
-Having a designer to work with would be beneficial for the project. Although the current design is very functional and minimal, there are many areas for expansion such as creating a color palette, improving typography, and introducing dark mode.
+Having a designer to work with would be beneficial for the project. Although the current design is very functional and minimal, there are many areas for expansion such as creating a color palette, improving typography, additional emphasis on responsive design, and introducing dark mode.
 
 **Additional Testing**
-The testing that is currently included is very focused on the the system alerting logic. As the application grows, we should implement complete code coverage for all components, hooks, and utility functions. We will also need to expand beyond functional testing to include other types of testing such as performance, security, and accessibility testing, as these are paramount for building a production-level application.
+The testing that is currently included is very focused on the the system alerting logic. As the application grows, we will need to implement complete code coverage for all components, hooks, APIs, and utility functions. We will also need to expand beyond functional testing to include other types of testing such as autmated performance, security, and accessibility testing, as these are paramount for building a production-level application.
