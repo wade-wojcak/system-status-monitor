@@ -93,20 +93,20 @@ I utilized TypeDoc to generate a documentation page for the application based on
 
 ## Potential Future Enhancements
 
-**Additional System Monitoring Modules**
+**Additional System Monitoring Modules**  
 Currently, this application focuses on monitoring a single system metric: CPU load average. However, there are many other system metrics that could be added to the user experience, such as memory allocation, disk usage, network traffic, and more. Expanding the functionality would enable a true dashboard-style experience.
 
-**Desktop Framework Integration**
+**Desktop Framework Integration**  
 This prototype is currently browser-based per the requirements. In the future, we should consider integrating it with a desktop framework such as Electron to provide a more native user experience. This would also allow more advanced and comprehensive system monitoring capabilities.
 
-**CI/CD Pipelines**
+**CI/CD Pipelines**  
 The current mode of testing, documentation generation, and build are manual and insufficient for a production-level application. These would all need cloud-based automation to push them to the next level. Introducing DevOps practices will make for a more reliable and higher-quality product. It should also be possible to integrate the deployment process with various desktop application stores for easy distribution to end uers.
 
-**Component and Design Library**
+**Component and Design Library**  
 The current component library is relatively utilitarian and focused on the prototype requirements. In the future, I would expand this into a more robust component library and associated design system. Introducing a tool like Storybook would allow for a smoother development experience for prototyping, testing, and documentation.
 
-**Visual Design Improvements**
+**Visual Design Improvements**  
 Having a designer to work with would be beneficial for the project. Although the current design is very functional and minimal, there are many areas for expansion such as creating a color palette, improving typography, additional emphasis on responsive design, and introducing dark mode.
 
-**Additional Testing**
+**Additional Testing**  
 The testing that is currently included is very focused on the the system alerting logic. As the application grows, we will need to implement complete code coverage for all components, hooks, APIs, and utility functions. We will also need to expand beyond functional testing to include other types of testing such as autmated performance, security, and accessibility testing, as these are paramount for building a production-level application.
