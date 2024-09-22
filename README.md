@@ -46,7 +46,7 @@ These sections are displayed on elegant card components with a consistent look a
 
 - Start the application by running `npm run dev` in the project root directory.
 - Open your web browser and navigate to `http://localhost:3000` to view the application.
-  - Note: You must run the application on a macOS (or other Unix-like) machine. The `os` Node.js module utilized in the API endpoint does not function the same way on Windows, and thus the application will not be fully functional there.
+  - Note: You must run the application on a macOS (or other Unix-like) machine. The `os` Node.js module utilized in the API endpoint does not function the same way on Windows, and thus the application may not operate as expected there.
 
 **Production Build**
 
