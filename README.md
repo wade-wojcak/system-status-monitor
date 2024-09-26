@@ -2,7 +2,7 @@
 
 This prototype application is designed to monitor the system's CPU load average and provide real-time status updates. The application maintains a rolling window of load average data points which are displayed in an Area chart. It will automatically trigger and display status events to the user when the load average exceeds a designated threshold or if the system recovers from recent high load events. When a status event triggers, a modal event dialog will appear with the event details. This dialog can be dismissed by the user, or will automatically close after 5 seconds. The status events are also recorded in an event log and can be reviewed at any time.
 
-I designed the UI to be a simple, clean and intuitive dashboard-style exprience. It is a single page application with three main sections:
+I designed the UI to be a simple, clean and intuitive dashboard-style experience. It is a single page application with three main sections:
 
 - System Status
 - Event Log
@@ -46,7 +46,7 @@ These sections are displayed on elegant card components with a consistent look a
 
 - Start the application by running `npm run dev` in the project root directory.
 - Open your web browser and navigate to `http://localhost:3000` to view the application.
-  - Note: You must run the application on a macOS (or other Unix-like) machine. The `os` Node.js module utilized in the API endpoint does not function the same way on Windows, and thus the application may not operate as expected there.
+  - Note: You must run the application on a macOS (or other Unix-like) machine. The `os` Node.js module utilized in the API endpoint does not function the same way on Windows, and thus the application will not be fully functional there.
 
 **Production Build**
 
@@ -58,7 +58,7 @@ These sections are displayed on elegant card components with a consistent look a
 
 ### Next.js, React, TypeScript
 
-- The primary framework and tooling used for the application are Next.js, React, and TypeScript. Next.js was chosen for having multiple useful out-of-the-box features to help accelerate prototyping and development without spending unnecessary time on environment setup. It's ability to easily scaffold and host API routes was particularly useful for this project. TypeScript was the natural choice for this project not only because it was part of the provided requirements, but because all modern React applications should be written in TypeScript going forward.
+- The primary framework and tooling used for the application are Next.js, React, and TypeScript. Next.js was chosen for having multiple useful out-of-the-box features to help accelerate prototyping and development without spending unnecessary time on environment setup. Its ability to easily scaffold and host API routes was particularly useful for this project. TypeScript was the natural choice for this project not only because it was part of the provided requirements, but because all modern React applications should be written in TypeScript going forward.
 
 ### Tailwind CSS
 
@@ -83,7 +83,7 @@ Beyond the code tests, I also performed a breadth of manual QA testing to ensure
 
 ## Documentation
 
-I utilized TypeDoc to generate a documentation page for the application based on JSDoc-style comments included throughout the codebase. The documentation is comprehensive for a prototype-level application and serves as a solid foundation for future development. In addition to documenting the type definitions and functional components, I've also included a number of inline comments to explain certain pieces of functionality.
+I utilized TypeDoc to generate a documentation page for the application based on JSDoc/TypeDoc-style comments included throughout the codebase. The documentation is comprehensive for a prototype-level application and serves as a solid foundation for future development. In addition to documenting the type definitions and functional components, I've also included a number of inline comments to explain certain pieces of functionality.
 
 **Running the Documentation**
 
@@ -93,14 +93,17 @@ I utilized TypeDoc to generate a documentation page for the application based on
 
 ## Potential Future Enhancements
 
+**API Integration and App State Management**  
+For the purposes of the prototype, I kept the API integration and App State Management relatively simple and direct. In the future, I would aim to improve this by introducing a library such as TanStack Query to manage the various API calls and global state management. TanStack Query combines a very intuitive and clean developer experience with powerful out-of-the-box features such as caching, background refetching, and request lifecycle states such as loading and errors. In particular, I would be able to swap out the interval-based refetch logic with the built-in background refetching and stale data handling capabilities.
+
+**Handling Loading and Error States**  
+Another clear area of improvement that ties into the prior point about app state management would be to implement more comprehensive loading and error handling and states. Although these are often deprioritized at the prototype stage, they are crucial for production readiness. Although the vast majority of a given user experience is focused on how the application feels while functioning as expected, having a solid strategy for handling loading and error states will ensure that the edge cases of the experience also feel more polished and professional.
+
 **Additional System Monitoring Modules**  
-Currently, this application focuses on monitoring a single system metric: CPU load average. However, there are many other system metrics that could be added to the user experience, such as memory allocation, disk usage, network traffic, and more. Expanding the functionality would enable a true dashboard-style experience.
+The initial version of the application focuses on monitoring a single system metric: CPU load average. However, there are many other system metrics that could be added to the user experience, such as memory allocation, disk usage, network traffic, and more. Expanding the functionality would enable a true dashboard-style experience. The current approach of utilizing the `os` Node.js module may not be sufficient for monitoring the variety of system metrics that we deem important to the user, which leads into the next point about expanding the application to include a more powerful desktop framework integration.
 
 **Desktop Framework Integration**  
-This prototype is currently browser-based per the requirements. In the future, we should consider integrating it with a desktop framework such as Electron to provide a more native user experience. This would also allow more advanced and comprehensive system monitoring capabilities.
-
-**CI/CD Pipelines**  
-The current mode of testing, documentation generation, and build are manual and insufficient for a production-level application. These would all need cloud-based automation to push them to the next level. Introducing DevOps practices will make for a more reliable and higher-quality product. It should also be possible to integrate the deployment process with various desktop application stores for easy distribution to end uers.
+Although the prototype is browser-based per the requirements, in the future we should consider integrating it with a desktop framework such as Electron to provide a more native user experience. This would also allow more advanced and comprehensive system monitoring capabilities.
 
 **Component and Design Library**  
 The current component library is relatively utilitarian and focused on the prototype requirements. In the future, I would expand this into a more robust component library and associated design system. Introducing a tool like Storybook would allow for a smoother development experience for prototyping, testing, and documentation.
@@ -108,5 +111,8 @@ The current component library is relatively utilitarian and focused on the proto
 **Visual Design Improvements**  
 Having a designer to work with would be beneficial for the project. Although the current design is very functional and minimal, there are many areas for expansion such as creating a color palette, improving typography, additional emphasis on responsive design, and introducing dark mode.
 
+**CI/CD Pipelines**  
+The current mode of testing, documentation generation, and build are manual and insufficient for a production-level application. These would all need cloud-based automation to push them to the next level. Introducing DevOps practices will make for a more reliable and higher-quality product. It should also be possible to integrate the deployment process with various desktop application stores for easy distribution to end users.
+
 **Additional Testing**  
-The testing that is currently included is very focused on the the system alerting logic. As the application grows, we will need to implement complete code coverage for all components, hooks, APIs, and utility functions. We will also need to expand beyond functional testing to include other types of testing such as autmated performance, security, and accessibility testing, as these are paramount for building a production-level application.
+The testing that is currently included is very focused on the system alerting logic. As the application grows, we will need to implement complete code coverage for all components, hooks, APIs, and utility functions. We will also need to expand beyond functional testing to include other types of testing such as automated performance, security, and accessibility testing, as these are paramount for building a production-level application.
