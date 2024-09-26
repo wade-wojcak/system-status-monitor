@@ -83,7 +83,7 @@ Beyond the code tests, I also performed a breadth of manual QA testing to ensure
 
 ## Documentation
 
-I utilized TypeDoc to generate a documentation page for the application based on JSDoc-style comments included throughout the codebase. The docuemtnation is comprehensive for a prototype-level application and serves as a solid foundation for future development. In addition to documenting the type definitions and functional components, I've also included a number of inline comments to explain certain pieces of functionality.
+I utilized TypeDoc to generate a documentation page for the application based on JSDoc-style comments included throughout the codebase. The documentation is comprehensive for a prototype-level application and serves as a solid foundation for future development. In addition to documenting the type definitions and functional components, I've also included a number of inline comments to explain certain pieces of functionality.
 
 **Running the Documentation**
 
